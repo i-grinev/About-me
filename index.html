@@ -1,707 +1,477 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Гринёв Иоанн — IT-руководитель / Интеграции / BI</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
-    <style>
-        /* ----- ПЕРЕМЕННЫЕ (тёмная / светлая тема) ----- */
-        :root {
-            --bg-body: #0a0e1a;
-            --bg-container: #0f1629;
-            --bg-card: #141e33;
-            --bg-card-hover: #1a2a4a;
-            --bg-highlight: #141e33;
-            --border-color: #1a2a4a;
-            --border-light: #1a2a4a;
-            --text-primary: #ffffff;
-            --text-secondary: #c8d0e0;
-            --text-muted: #8899bb;
-            --text-dim: #5a6a8a;
-            --accent: #00e5ff;
-            --accent-hover: #66f0ff;
-            --shadow: 0 20px 60px rgba(0, 10, 40, 0.9);
-            --transition: 0.3s ease;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Гринёв Иоанн — IT-руководитель · интеграции · аналитика</title>
+<meta name="description" content="Руководитель технического отдела: автоматизация, интеграции систем, CRM, BI-аналитика. 8 лет опыта, измеримые результаты. Самозанятый. Ставка 2000–2500 ₽/час, поддержка от 40 000 ₽/мес.">
+<meta property="og:title" content="Гринёв Иоанн — IT-руководитель · интеграции · аналитика">
+<meta property="og:description" content="Автоматизация, интеграции систем, CRM и BI с измеримым результатом. 8 лет опыта.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://i-grinev.github.io/About-me/">
+<meta name="author" content="Иоанн Гринёв">
+<meta name="contact" content="i79934431322@yandex.ru">
+<style>
+  :root{
+    --bg:#0a0c10;
+    --bg-soft:#11151c;
+    --card:#141922;
+    --card-hover:#1a2030;
+    --border:#232a36;
+    --border-soft:#1c222c;
+    --text:#f0f3f8;
+    --muted:#8a94a6;
+    --accent:#6ea8fe;
+    --accent-2:#7ee787;
+    --radius:16px;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
-        [data-theme="light"] {
-            --bg-body: #e8edf5;
-            --bg-container: #ffffff;
-            --bg-card: #f0f4fa;
-            --bg-card-hover: #e4eaf2;
-            --bg-highlight: #eef3f9;
-            --border-color: #c8d4e4;
-            --border-light: #d5dfed;
-            --text-primary: #0a1628;
-            --text-secondary: #1a2a44;
-            --text-muted: #5a6a8a;
-            --text-dim: #8899bb;
-            --accent: #0088cc;
-            --accent-hover: #00aadd;
-            --shadow: 0 20px 60px rgba(0, 10, 40, 0.12);
-        }
+  .glow{
+    position:fixed;top:-300px;left:50%;transform:translateX(-50%);
+    width:900px;height:600px;pointer-events:none;z-index:0;
+    background:radial-gradient(closest-side,rgba(110,168,254,.13),transparent 70%);
+    filter:blur(20px);
+  }
+  main,header,footer{position:relative;z-index:1}
 
-        /* ----- БАЗА ----- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:20;
+    background:rgba(10,12,16,.75);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+  .nav .brand{font-weight:700;font-size:15px;letter-spacing:.3px}
+  .nav .brand span{color:var(--accent)}
+  .nav .links{display:flex;gap:26px;font-size:14px}
+  .nav .links a{color:var(--muted);transition:color .2s}
+  .nav .links a:hover{color:var(--text);text-decoration:none}
+  @media(max-width:760px){.nav .links{display:none}}
 
-        body {
-            background: var(--bg-body);
-            color: var(--text-secondary);
-            font-family: "Inter", sans-serif;
-            line-height: 1.5;
-            padding: 2rem 1rem;
-            transition: background var(--transition), color var(--transition);
-        }
+  /* HERO */
+  .hero{padding:96px 0 72px}
+  .hero .eyebrow{
+    font-size:13px;color:var(--accent);letter-spacing:1.5px;
+    text-transform:uppercase;font-weight:600;margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:clamp(30px,5.6vw,56px);
+    line-height:1.1;letter-spacing:-1px;font-weight:800;
+    max-width:900px;
+  }
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero .sub{
+    color:var(--muted);font-size:clamp(16px,2.3vw,19px);
+    margin-top:22px;max-width:680px;
+  }
+  .hero .sub b{color:var(--text);font-weight:600}
+  .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .btn{
+    display:inline-block;padding:13px 24px;border-radius:10px;
+    font-weight:600;font-size:15px;border:1px solid var(--border);
+    background:var(--card);color:var(--text);transition:.2s;
+  }
+  .btn:hover{text-decoration:none;background:var(--card-hover);border-color:var(--accent)}
+  .btn.primary{background:var(--accent);color:#0a0c10;border-color:var(--accent)}
+  .btn.primary:hover{filter:brightness(1.08);background:var(--accent)}
+  .hero .quick{color:var(--muted);font-size:14px;margin-top:16px}
+  .hero .quick a{color:var(--text)}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: var(--bg-container);
-            padding: 2.5rem 2rem;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow);
-            transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
-        }
+  /* STATS */
+  .stats{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:14px;margin-top:56px;padding-top:36px;border-top:1px solid var(--border-soft);
+  }
+  .stat .num{font-size:clamp(26px,3.6vw,34px);font-weight:800;letter-spacing:-.5px}
+  .stat .num span{color:var(--accent-2)}
+  .stat .lbl{font-size:13px;color:var(--muted);margin-top:2px}
 
-        /* ----- ШАПКА ----- */
-        .header-top {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
+  /* SECTIONS */
+  section{padding:72px 0;border-top:1px solid var(--border-soft)}
+  .section-head{margin-bottom:40px;max-width:720px}
+  .section-head .eyebrow{
+    font-size:12px;color:var(--accent);letter-spacing:1.5px;
+    text-transform:uppercase;font-weight:600;margin-bottom:10px;
+  }
+  h2{font-size:clamp(22px,3.6vw,34px);letter-spacing:-.6px;line-height:1.15}
+  .lead{color:var(--muted);margin-top:12px;font-size:16px}
 
-        .theme-toggle {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: var(--bg-card);
-            padding: 0.5rem 1rem 0.5rem 1.2rem;
-            border-radius: 40px;
-            border: 1px solid var(--border-light);
-            cursor: pointer;
-            transition: background var(--transition), border-color var(--transition);
-            user-select: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
+  /* CARDS */
+  .grid{display:grid;gap:16px}
+  .grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .grid.cols-4{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+  .card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius);padding:24px;transition:.2s;
+  }
+  .card:hover{border-color:var(--accent);background:var(--card-hover);transform:translateY(-2px)}
+  .card h3{font-size:16px;margin-bottom:8px;font-weight:700}
+  .card p{color:var(--muted);font-size:14px}
+  .card .ico{font-size:20px;margin-bottom:14px;display:block;opacity:.9}
 
-        .theme-toggle:hover {
-            border-color: var(--accent);
-        }
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:24px}}
+  .about-grid p{color:var(--muted);margin-bottom:14px}
+  .about-grid p b{color:var(--text)}
+  .side-list{list-style:none;display:grid;gap:12px}
+  .side-list li{
+    padding:14px 16px;background:var(--card);border:1px solid var(--border);
+    border-radius:12px;font-size:14px;
+  }
+  .side-list li b{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.6px;margin-bottom:3px}
 
-        .theme-toggle .icon {
-            font-size: 1.3rem;
-            line-height: 1;
-            transition: transform 0.4s ease;
-        }
+  /* PROCESS */
+  .process{counter-reset:step;display:grid;gap:14px}
+  .step{
+    display:flex;gap:18px;padding:20px 22px;background:var(--card);
+    border:1px solid var(--border);border-radius:var(--radius);transition:.2s;
+  }
+  .step:hover{border-color:var(--accent)}
+  .step:before{
+    counter-increment:step;content:counter(step);
+    flex:0 0 34px;height:34px;border-radius:9px;
+    background:rgba(110,168,254,.12);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:15px;
+  }
+  .step h3{font-size:15px;margin-bottom:4px}
+  .step p{color:var(--muted);font-size:14px}
 
-        .theme-toggle .icon.rotate {
-            transform: rotate(180deg);
-        }
+  /* TECH TAGS */
+  .tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+  .tag{
+    font-size:13px;padding:8px 14px;border-radius:999px;
+    background:var(--card);border:1px solid var(--border);color:var(--text);
+  }
+  .tag b{color:var(--muted);font-weight:500;margin-right:5px}
+  .tag.accent{border-color:rgba(110,168,254,.5);color:var(--accent)}
 
-        /* ----- ТИПОГРАФИКА ----- */
-        h1 {
-            font-size: 3.6rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            color: var(--text-primary);
-            line-height: 1;
-            margin-bottom: 0.15rem;
-            transition: color var(--transition);
-        }
+  /* CASES */
+  .case{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius);padding:26px;transition:.2s;
+  }
+  .case:hover{border-color:var(--accent);background:var(--card-hover)}
+  .case .top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .case .top h3{font-size:17px;font-weight:700}
+  .case .pill{
+    font-size:11px;padding:4px 10px;border-radius:999px;
+    background:rgba(110,168,254,.12);color:var(--accent);
+    letter-spacing:.3px;font-weight:600;
+  }
+  .case .meta{font-size:13px;color:var(--muted);margin-bottom:14px}
+  .case .meta b{color:var(--text)}
+  .case p{font-size:14px;color:var(--muted);margin-bottom:10px}
+  .case .result{
+    margin-top:16px;padding-top:16px;border-top:1px solid var(--border-soft);
+    font-size:14px;display:flex;flex-wrap:wrap;gap:8px 22px;
+  }
+  .case .result b{color:var(--accent-2);font-weight:700}
+  .case .result span{color:var(--muted)}
 
-        h1 span {
-            color: var(--text-muted);
-            font-weight: 300;
-            display: block;
-            font-size: 1.6rem;
-            margin-top: 0.25rem;
-            letter-spacing: 0.02em;
-        }
+  /* PRICE */
+  .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .price{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius);padding:26px;transition:.2s;
+  }
+  .price:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .price .kind{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;font-weight:600}
+  .price .amount{font-size:26px;font-weight:800;margin:10px 0 2px;letter-spacing:-.5px}
+  .price .amount small{font-size:14px;color:var(--muted);font-weight:500}
+  .price ul{list-style:none;margin-top:16px;font-size:14px;color:var(--muted)}
+  .price li{padding:5px 0 5px 20px;position:relative}
+  .price li:before{content:"—";position:absolute;left:0;color:var(--accent)}
 
-        h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--text-primary);
-            border-bottom: 3px solid var(--accent);
-            padding-bottom: 0.5rem;
-            margin: 2.5rem 0 1.5rem 0;
-            transition: color var(--transition), border-color var(--transition);
-        }
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .contact-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius);padding:24px;transition:.2s;
+  }
+  .contact-card:hover{border-color:var(--accent);background:var(--card-hover)}
+  .contact-card a{font-size:16px;font-weight:700;display:block}
+  .contact-card p{color:var(--muted);font-size:13px;margin-top:6px}
 
-        .highlight-box {
-            background: var(--bg-highlight);
-            border-left: 6px solid var(--accent);
-            padding: 1.5rem 2rem;
-            margin: 1.5rem 0;
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: var(--text-secondary);
-            transition: background var(--transition), border-color var(--transition), color var(--transition);
-        }
-
-        /* ----- КОНТАКТЫ ----- */
-        .contacts {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem 2.5rem;
-            background: var(--bg-card);
-            padding: 1.25rem 2rem;
-            border: 1px solid var(--border-light);
-            margin: 1.5rem 0 2rem 0;
-            font-size: 1.1rem;
-            transition: background var(--transition), border-color var(--transition);
-        }
-
-        .contacts a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s, color var(--transition);
-        }
-
-        .contacts a:hover {
-            border-bottom-color: var(--accent);
-        }
-
-        .contacts .label {
-            color: var(--text-dim);
-            margin-right: 0.3rem;
-        }
-
-        /* ----- СЕТКА НАВЫКОВ ----- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem 2.5rem;
-            background: var(--bg-card);
-            padding: 1.5rem 2rem;
-            border: 1px solid var(--border-light);
-            margin: 1rem 0 1.5rem 0;
-            transition: background var(--transition), border-color var(--transition);
-        }
-
-        .skills-grid .category {
-            font-weight: 700;
-            color: var(--accent);
-            display: block;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.2rem;
-        }
-
-        .skills-grid .items {
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-
-        /* ----- КЕЙСЫ ----- */
-        .project {
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            padding: 1.5rem 2rem;
-            margin: 1.25rem 0;
-            transition: border-color 0.25s ease, transform 0.2s ease, background var(--transition), box-shadow 0.3s ease;
-            cursor: default;
-        }
-
-        .project:hover {
-            border-color: var(--accent);
-            transform: translateX(6px);
-            box-shadow: 0 4px 30px rgba(0, 229, 255, 0.08);
-        }
-
-        .project .title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.3rem;
-            transition: color var(--transition);
-        }
-
-        .project ul {
-            list-style: none;
-            padding: 0;
-            margin: 0.5rem 0 0 0;
-        }
-
-        .project ul li {
-            padding: 0.2rem 0 0.2rem 1.5rem;
-            position: relative;
-            color: var(--text-secondary);
-            transition: color var(--transition);
-        }
-
-        .project ul li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .project .result {
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid var(--border-light);
-            font-weight: 600;
-            color: var(--text-primary);
-            transition: color var(--transition), border-color var(--transition);
-        }
-
-        .project .result .highlight {
-            color: var(--accent);
-        }
-
-        /* ----- ТЕГ МЕССЕНДЖЕРОВ ----- */
-        .messenger-tag {
-            display: inline-block;
-            background: var(--accent);
-            color: #0a0e1a;
-            font-weight: 700;
-            font-size: 0.8rem;
-            padding: 0.3rem 1.2rem;
-            border-radius: 20px;
-            letter-spacing: 0.02em;
-            margin-top: 0.75rem;
-        }
-
-        .messenger-tag span {
-            font-weight: 900;
-            color: #0a0e1a;
-        }
-
-        /* ----- ДОСТИЖЕНИЯ ----- */
-        .achievements {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem 2rem;
-            background: var(--bg-card);
-            padding: 1.5rem 2rem;
-            border: 1px solid var(--border-light);
-            margin: 1rem 0 1.5rem 0;
-            transition: background var(--transition), border-color var(--transition);
-        }
-
-        .achievements .item {
-            font-size: 1.05rem;
-            color: var(--text-secondary);
-            transition: color var(--transition);
-        }
-
-        .achievements .item strong {
-            color: var(--text-primary);
-            font-weight: 700;
-        }
-
-        .achievements .item .num {
-            color: var(--accent);
-            font-weight: 800;
-        }
-
-        /* ----- ОБРАЗОВАНИЕ ----- */
-        .edu-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            padding: 0.75rem 1.5rem;
-            margin: 0.5rem 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: baseline;
-            transition: background var(--transition), border-color var(--transition);
-        }
-
-        .edu-item .name {
-            font-weight: 600;
-            color: var(--text-primary);
-            transition: color var(--transition);
-        }
-
-        .edu-item .year {
-            color: var(--text-dim);
-            font-weight: 400;
-        }
-
-        /* ----- CTA ----- */
-        .cta {
-            background: var(--bg-card);
-            border: 2px solid var(--accent);
-            padding: 2rem;
-            margin: 2.5rem 0 1rem 0;
-            text-align: center;
-            transition: background var(--transition), border-color var(--transition);
-        }
-
-        .cta .big {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-            transition: color var(--transition);
-        }
-
-        .cta .big span {
-            color: var(--accent);
-        }
-
-        .cta .contacts-line {
-            margin-top: 1rem;
-            font-size: 1.2rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem 2rem;
-        }
-
-        .cta .contacts-line a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color var(--transition);
-        }
-
-        .cta .contacts-line a:hover {
-            text-decoration: underline;
-        }
-
-        /* ----- АНИМАЦИЯ ПРИ ЗАГРУЗКЕ ----- */
-        .container {
-            animation: fadeUp 0.7s ease forwards;
-            opacity: 0;
-        }
-
-        @keyframes fadeUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ----- АДАПТИВ ----- */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1.5rem 1rem;
-            }
-            h1 {
-                font-size: 2.6rem;
-            }
-            h1 span {
-                font-size: 1.3rem;
-            }
-            h2 {
-                font-size: 1.6rem;
-            }
-            .skills-grid,
-            .achievements {
-                grid-template-columns: 1fr;
-                gap: 0.75rem;
-            }
-            .contacts {
-                flex-direction: column;
-                gap: 0.4rem;
-                align-items: flex-start;
-            }
-            .project {
-                padding: 1rem 1.25rem;
-            }
-            .cta .big {
-                font-size: 1.5rem;
-            }
-            .cta .contacts-line {
-                flex-direction: column;
-                gap: 0.3rem;
-            }
-            .header-top {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 1rem;
-            }
-            .theme-toggle {
-                align-self: flex-start;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
-            .container {
-                padding: 1rem 0.75rem;
-            }
-        }
-    </style>
+  /* FOOTER */
+  footer{padding:40px 0;border-top:1px solid var(--border-soft);color:var(--muted);font-size:13px}
+  .foot{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+</style>
 </head>
 <body>
+<div class="glow"></div>
 
-    <div class="container">
+<header>
+  <div class="wrap nav">
+    <div class="brand">Иоанн <span>Гринёв</span></div>
+    <nav class="links">
+      <a href="#about">Обо мне</a>
+      <a href="#process">Процесс</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#price">Цены</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </div>
+</header>
 
-        <!-- ====== ШАПКА ====== -->
-        <div class="header-top">
-            <div>
-                <h1>
-                    Гринёв Иоанн
-                    <span>IT-руководитель · BI-аналитик · Интеграции</span>
-                </h1>
-            </div>
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">IT-руководитель · интеграции систем · аналитика</div>
+    <h1>Соединяю системы и даю <em>измеримый</em> результат, а не «сделано»</h1>
+    <p class="sub">
+      8 лет в автоматизации, интеграциях и управлении техническими командами.
+      Интегрирую CRM, телефонию, мессенджеры и аналитику в единое окно —
+      <b>делаю сам и организую так, чтобы работало без меня</b>.
+      Работаю как самозанятый: проекты, поддержка, роли в найме.
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="https://t.me/i_grinev">Написать в Telegram</a>
+      <a class="btn" href="mailto:i79934431322@yandex.ru">Отправить задачу на email</a>
+    </div>
+    <p class="quick">
+      📱 <a href="tel:+79934431322">+7 993 443-13-22</a> (телефон / MAX) · ✈️ <a href="https://t.me/i_grinev">@i_grinev</a> · 📩 <a href="mailto:i79934431322@yandex.ru">i79934431322@yandex.ru</a>
+    </p>
 
-            <!-- ПЕРЕКЛЮЧАТЕЛЬ ТЕМ -->
-            <div class="theme-toggle" id="themeToggle" role="button" tabindex="0" aria-label="Переключить тему">
-                <span class="icon" id="themeIcon">🌙</span>
-                <span id="themeLabel">Тёмная</span>
-            </div>
-        </div>
+    <div class="stats">
+      <div class="stat"><div class="num"><span>8</span> лет</div><div class="lbl">в автоматизации</div></div>
+      <div class="stat"><div class="num"><span>−40%</span></div><div class="lbl">нагрузка на поддержку</div></div>
+      <div class="stat"><div class="num"><span>250+</span></div><div class="lbl">операторов в миграции</div></div>
+      <div class="stat"><div class="num"><span>7+</span></div><div class="lbl">провайдеров телефонии</div></div>
+      <div class="stat"><div class="num"><span>5</span> компаний</div><div class="lbl">внедрил BI-дашборды</div></div>
+    </div>
+  </div>
+</section>
 
-        <!-- ====== КОНТАКТЫ ====== -->
-        <div class="contacts">
-            <div><span class="label">📞</span> <a href="tel:+79934431322">+7 (993) 443-13-22</a></div>
-            <div><span class="label">📧</span> <a href="mailto:i79934431322@yandex.ru">i79934431322@yandex.ru</a></div>
-            <div><span class="label">📱</span> <a href="https://t.me/i_grinev" target="_blank">@i_grinev</a></div>
-            <div><span class="label">💬</span> <a href="https://max.ru/u/f9LHodD0cOIKbNuEaEvxFfRpqc0nXv4RNkqPcHf-9iHjbtZZzuPN61EHsh0" target="_blank">MAX</a></div>
-            <div><span class="label">📍</span> Майкоп (удалённо)</div>
-        </div>
-
-        <!-- ====== ОБО МНЕ ====== -->
-        <section>
-            <h2>Обо мне</h2>
-            <div class="highlight-box">
-                IT-специалист с <strong>8-летним</strong> опытом в автоматизации, интеграциях и управлении командами. Решаю бизнес-задачи комплексно: от написания скриптов до стратегического управления техническими отделами.
-                <br><br>
-                <strong>Ключевой принцип:</strong> <em>«Автоматизация — это не про код, а про время. Я делаю так, чтобы бизнес работал быстрее, а люди — эффективнее.»</em>
-            </div>
-        </section>
-
-        <!-- ====== УСЛУГИ ====== -->
-        <section>
-            <h2>Специализация</h2>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0 1.5rem 0;">
-                <div style="background:var(--bg-card); border:1px solid var(--border-light); padding:1.25rem 1.5rem; transition: background var(--transition), border-color var(--transition);">
-                    <div style="font-size:1.8rem; font-weight:300; color:var(--accent);">📞</div>
-                    <div style="font-weight:700; font-size:1.2rem; color:var(--text-primary); margin:0.3rem 0 0.2rem 0;">Интеграция телефонии</div>
-                    <div style="color:var(--text-muted); font-size:0.95rem;">Билайн, Мегафон, МТТ, МТС, Ростелеком, Sipuni, FreePBX. IVR, маршрутизация, автосоздание карточек.</div>
-                </div>
-                <div style="background:var(--bg-card); border:1px solid var(--border-light); padding:1.25rem 1.5rem; transition: background var(--transition), border-color var(--transition);">
-                    <div style="font-size:1.8rem; font-weight:300; color:var(--accent);">💬</div>
-                    <div style="font-weight:700; font-size:1.2rem; color:var(--text-primary); margin:0.3rem 0 0.2rem 0;">Мессенджеры + боты</div>
-                    <div style="color:var(--text-muted); font-size:0.95rem;"><strong>MAX</strong> (боты), Telegram API, Wappi. Автообработка, синхронизация с CRM.</div>
-                </div>
-                <div style="background:var(--bg-card); border:1px solid var(--border-light); padding:1.25rem 1.5rem; transition: background var(--transition), border-color var(--transition);">
-                    <div style="font-size:1.8rem; font-weight:300; color:var(--accent);">🔄</div>
-                    <div style="font-weight:700; font-size:1.2rem; color:var(--text-primary); margin:0.3rem 0 0.2rem 0;">Комплексная автоматизация</div>
-                    <div style="color:var(--text-muted); font-size:0.95rem;">Телефония + мессенджеры + CRM = <strong>единое окно</strong>. REST API, Bitrix24, amoCRM.</div>
-                </div>
-                <div style="background:var(--bg-card); border:1px solid var(--border-light); padding:1.25rem 1.5rem; transition: background var(--transition), border-color var(--transition);">
-                    <div style="font-size:1.8rem; font-weight:300; color:var(--accent);">📊</div>
-                    <div style="font-weight:700; font-size:1.2rem; color:var(--text-primary); margin:0.3rem 0 0.2rem 0;">BI-аналитика</div>
-                    <div style="color:var(--text-muted); font-size:0.95rem;"><strong>Bitrix BI</strong>, Yandex Data Lens, Power BI. Дашборды, KPI, сквозная аналитика.</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====== ТЕХНИЧЕСКИЕ НАВЫКИ ====== -->
-        <section>
-            <h2>Технические навыки</h2>
-            <div class="skills-grid">
-                <div><span class="category">CRM</span> <span class="items">Bitrix24, amoCRM</span></div>
-                <div><span class="category">Телефония</span> <span class="items">Билайн, Мегафон, МТТ, МТС, Ростелеком, Sipuni, FreePBX</span></div>
-                <div><span class="category">Мессенджеры</span> <span class="items">MAX (боты), Telegram (боты), WhatsApp</span></div>
-                <div><span class="category">Разработка</span> <span class="items">Python, REST API, JSON, SQL</span></div>
-                <div><span class="category">Аналитика</span> <span class="items">Bitrix BI, Yandex Data Lens, Power BI</span></div>
-                <div><span class="category">Управление</span> <span class="items">SLA, KPI, Help Desk, управление командой, навыки продаж</span></div>
-            </div>
-        </section>
-
-        <!-- ====== ОПЫТ И ПРОЕКТЫ ====== -->
-        <section>
-            <h2>Опыт и проекты</h2>
-
-            <!-- ===== КЕЙС 1 ===== -->
-            <div class="project">
-                <div class="title">Альфалайн — Руководитель технического отдела</div>
-                <ul>
-                    <li>Управление командой из 3 технических специалистов</li>
-                    <li>Внедрение процессов техподдержки (SLA, KPI)</li>
-                    <li>Миграция контакт-центра на облачную платформу (<strong>250+ операторов</strong>)</li>
-                    <li>Внедрение единой базы знаний для сотрудников</li>
-                    <li>Увеличил CSAT, внедрил систему отчётности и KPI, снизил текучесть кадров</li>
-                </ul>
-                <div class="result"><span class="highlight">Результат:</span> снижение нагрузки на техподдержку на 40% через Help Desk</div>
-                <div class="messenger-tag">📱 Внедрённые мессенджеры: <span>Telegram, Telegram-бот, MAX, MAX-бот, WhatsApp</span></div>
-            </div>
-
-            <!-- ===== КЕЙС 2 ===== -->
-            <div class="project">
-                <div class="title">Агентство недвижимости — Внедрение CRM и автоматизация воронки продаж</div>
-                <ul>
-                    <li>Внедрил amoCRM с нуля: воронки, этапы сделок, телефония</li>
-                    <li>Автозагрузка объектов из внешних источников через <strong>REST API</strong></li>
-                    <li>Разработал <strong>MAX-бота</strong> и <strong>Telegram-бота</strong> для обработки заявок и квалификации</li>
-                    <li>Отчётность в <strong>Bitrix BI</strong> и Power BI по конверсиям</li>
-                </ul>
-                <div class="result"><span class="highlight">Результат:</span> рост закрытых сделок на 22% за 3 месяца, сокращение времени первого ответа на 40%</div>
-                <div class="messenger-tag">📱 Внедрённые мессенджеры: <span>Telegram, Telegram-бот, MAX, MAX-бот, WhatsApp</span></div>
-            </div>
-
-            <!-- ===== КЕЙС 3 ===== -->
-            <div class="project">
-                <div class="title">Медицинский центр — Автоматизация записи и поддержки</div>
-                <ul>
-                    <li>Настроил Bitrix24: управление пациентами, расписанием</li>
-                    <li>Интегрировал телефонию (<strong>МТС</strong>) для автоматической записи</li>
-                    <li>Внедрил <strong>MAX-бота</strong> и <strong>Telegram-бота</strong> для записи, напоминаний и обратной связи</li>
-                    <li>Дашборды в <strong>Yandex Data Lens</strong> по загрузке врачей</li>
-                </ul>
-                <div class="result"><span class="highlight">Результат:</span> сокращение времени записи на 30%, снижение неявок на 25%</div>
-                <div class="messenger-tag">📱 Внедрённые мессенджеры: <span>Telegram, Telegram-бот, MAX, MAX-бот, WhatsApp</span></div>
-            </div>
-
-            <!-- ===== КЕЙС 4 ===== -->
-            <div class="project">
-                <div class="title">Интернет-магазин — Поддержка и повторные продажи</div>
-                <ul>
-                    <li>Интегрировал Telegram, <strong>MAX</strong> и WhatsApp с CRM в единую систему поддержки</li>
-                    <li>Разработал <strong>MAX-бота</strong> и <strong>Telegram-бота</strong> для типовых вопросов (статус заказа, возврат)</li>
-                    <li>Автопередача лидов из чатов в отдел продаж через REST API</li>
-                    <li>Сквозная аналитика в <strong>Bitrix BI</strong> от касания до повторной покупки</li>
-                </ul>
-                <div class="result"><span class="highlight">Результат:</span> снижение нагрузки на поддержку на 35%, рост повторных продаж на 18% за 2 месяца</div>
-                <div class="messenger-tag">📱 Внедрённые мессенджеры: <span>Telegram, Telegram-бот, MAX, MAX-бот, WhatsApp</span></div>
-            </div>
-
-            <!-- ===== КЕЙС 5 ===== -->
-            <div class="project">
-                <div class="title">Онлайн-школа — Воронка регистрации и удержания</div>
-                <ul>
-                    <li>Внедрил Bitrix24 для управления студентами и группами</li>
-                    <li>Разработал <strong>Telegram-бота</strong> и <strong>MAX-бота</strong> для регистрации на вебинары</li>
-                    <li>Интеграция с платёжной системой через REST API</li>
-                    <li>Дашборды в <strong>Yandex Data Lens</strong> по конверсии вебинары → курсы</li>
-                </ul>
-                <div class="result"><span class="highlight">Результат:</span> рост конверсии в регистрацию на 28%, увеличение удержания на 15%</div>
-                <div class="messenger-tag">📱 Внедрённые мессенджеры: <span>Telegram, Telegram-бот, MAX, MAX-бот, WhatsApp</span></div>
-            </div>
-
-            <!-- ===== КЕЙС 6 ===== -->
-            <div class="project">
-                <div class="title">Мебельная компания — Автоматизация закупок и логистики</div>
-                <ul>
-                    <li>Внедрил Bitrix24 для управления заказами поставщиков и складами</li>
-                    <li>Интегрировал телефонию (<strong>Ростелеком</strong>) для приёма заказов от дилеров</li>
-                    <li>Разработал <strong>Telegram-бота</strong> для уведомлений о статусе поставок</li>
-                    <li>Обмен данными с внешней учётной системой через <strong>REST API</strong></li>
-                    <li>Дашборды в <strong>Bitrix BI</strong> по движению товаров и срокам</li>
-                </ul>
-                <div class="result"><span class="highlight">Результат:</span> сокращение времени обработки заказа на 25%, снижение просрочек поставок на 30%</div>
-                <div class="messenger-tag">📱 Внедрённые мессенджеры: <span>Telegram, Telegram-бот, MAX, MAX-бот, WhatsApp</span></div>
-            </div>
-        </section>
-
-        <!-- ====== КЛЮЧЕВЫЕ ДОСТИЖЕНИЯ ====== -->
-        <section>
-            <h2>Ключевые достижения</h2>
-            <div class="achievements">
-                <div class="item"><span class="num">●</span> Снизил время обработки заявок на <strong>35%</strong> через автоматизацию (в т.ч. <strong>MAX-боты</strong> и <strong>Telegram-боты</strong>)</div>
-                <div class="item"><span class="num">●</span> Мигрировал контакт-центр на облачную платформу для <strong>250+</strong> операторов</div>
-                <div class="item"><span class="num">●</span> Снизил нагрузку на техподдержку на <strong>40%</strong></div>
-                <div class="item"><span class="num">●</span> Интегрировал <strong>7+</strong> провайдеров телефонии с CRM</div>
-                <div class="item"><span class="num">●</span> Внедрил <strong>BI-дашборды</strong> в Bitrix BI, Yandex Data Lens и Power BI для 5 компаний</div>
-            </div>
-            <div class="highlight-box" style="border-left-color:var(--text-primary);">
-                <strong>Управленческий результат:</strong> Навыки продаж и управления командой позволяют не просто внедрить технологию, а <strong>получить измеримый бизнес-результат</strong> — рост конверсии, сокращение затрат и повышение эффективности каждого сотрудника.
-            </div>
-        </section>
-
-        <!-- ====== ОБРАЗОВАНИЕ ====== -->
-        <section>
-            <h2>Образование и сертификаты</h2>
-            <div class="edu-item"><span class="name">Луганский национальный университет</span> <span class="year">2019</span></div>
-            <div class="edu-item"><span class="name">Институт бизнес аналитики — «Аналитик данных»</span> <span class="year">2024</span></div>
-            <div class="edu-item"><span class="name">1С Битрикс — «No-code в Битрикс24»</span> <span class="year">2024</span></div>
-            <div class="edu-item"><span class="name">Stepik — «Основы Python»</span> <span class="year">2022</span></div>
-        </section>
-
-        <!-- ====== CTA ====== -->
-        <div class="cta">
-            <div class="big">📩 Готов к <span>новым проектам</span></div>
-            <div style="color:var(--text-muted); margin-top:0.3rem; font-size:1.1rem;">Автоматизация, интеграции, BI-аналитика — решаю задачи любой сложности.</div>
-            <div class="contacts-line">
-                <a href="tel:+79934431322">📞 +7 (993) 443-13-22</a>
-                <a href="mailto:i79934431322@yandex.ru">📧 i79934431322@yandex.ru</a>
-                <a href="https://t.me/i_grinev" target="_blank">📱 @i_grinev</a>
-                <a href="https://max.ru/u/f9LHodD0cOIKbNuEaEvxFfRpqc0nXv4RNkqPcHf-9iHjbtZZzuPN61EHsh0" target="_blank">💬 MAX</a>
-            </div>
-        </div>
-
-        <footer style="margin-top:2rem; border-top:1px solid var(--border-light); padding-top:1rem; font-size:0.8rem; color:var(--text-dim); text-align:center; transition: color var(--transition), border-color var(--transition);">
-            © 2026 Гринёв Иоанн · Сайт-визитка
-        </footer>
-
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Обо мне</div>
+      <h2>Инженер, который умеет организовать</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>
+          Прошёл путь от скриптов и настройки интеграций до руководства техническим отделом.
+          Знаю, <b>как связать разрозненные системы</b> между собой, и умею выстроить так,
+          чтобы всё работало без моего постоянного участия.
+        </p>
+        <p>
+          Мой принцип: <b>автоматизация — это не про код, а про время</b>. Я делаю так, чтобы бизнес работал
+          быстрее, а люди — эффективнее. Результат считаю в цифрах: конверсия, затраты, часы, нагрузка.
+        </p>
+        <p>
+          Работаю с CRM, телефонией, мессенджерами и BI-аналитикой.
+          <b>Интегрирую системы</b> — собираю их в единое окно, где всё связано и измеримо.
+        </p>
+      </div>
+      <ul class="side-list">
+        <li><b>Роль</b>Руководитель технического отдела</li>
+        <li><b>Опыт</b>8 лет в автоматизации и интеграциях</li>
+        <li><b>Формат</b>Удалённо · самозанятый · чек</li>
+        <li><b>Фокус</b>Интеграции систем и результат в цифрах</li>
+      </ul>
     </div>
 
-    <!-- ====== СКРИПТ ПЕРЕКЛЮЧЕНИЯ ТЕМ ====== -->
-    <script>
-        (function() {
-            const toggle = document.getElementById('themeToggle');
-            const icon = document.getElementById('themeIcon');
-            const label = document.getElementById('themeLabel');
-            const root = document.documentElement;
+    <div class="tags" style="margin-top:32px">
+      <span class="tag accent"><b>Интеграции</b>CRM · телефония · мессенджеры · REST API</span>
+      <span class="tag"><b>CRM</b>Битрикс24 · amoCRM</span>
+      <span class="tag"><b>Телефония</b>Билайн, МТС, Мегафон, Sipuni, FreePBX</span>
+      <span class="tag"><b>Мессенджеры</b>Telegram, MAX, WhatsApp</span>
+      <span class="tag"><b>Разработка</b>Python, REST API, SQL</span>
+      <span class="tag"><b>Аналитика</b>Bitrix BI, Power BI, Yandex Data Lens</span>
+      <span class="tag"><b>Управление</b>SLA, KPI, Help Desk</span>
+    </div>
+  </div>
+</section>
 
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            if (savedTheme === 'light') {
-                root.setAttribute('data-theme', 'light');
-                icon.textContent = '☀️';
-                label.textContent = 'Светлая';
-                icon.classList.remove('rotate');
-            } else {
-                root.setAttribute('data-theme', 'dark');
-                icon.textContent = '🌙';
-                label.textContent = 'Тёмная';
-                icon.classList.remove('rotate');
-            }
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Как я работаю</div>
+      <h2>Прозрачный процесс — от разбора до поддержки</h2>
+      <p class="lead">Вы понимаете, что происходит на каждом этапе и сколько это стоит. Без сюрпризов.</p>
+    </div>
+    <div class="process">
+      <div class="step"><div><h3>Бесплатный разбор</h3><p>Смотрю ваши системы и говорю, что реально нужно интегрировать, а что — нет. Без навязывания.</p></div></div>
+      <div class="step"><div><h3>Смета и сроки</h3><p>Фиксирую объём, цену и сроки до старта. Никаких «потом посчитаем».</p></div></div>
+      <div class="step"><div><h3>Интеграция и внедрение</h3><p>Связываю системы между собой, настраиваю процессы. Делаю сам или веду команду.</p></div></div>
+      <div class="step"><div><h3>Передача и обучение</h3><p>Показываю, как пользоваться, оставляю документацию. Система работает без меня.</p></div></div>
+      <div class="step"><div><h3>Поддержка</h3><p>По желанию — сопровождение и доработки по абонентской модели.</p></div></div>
+    </div>
+  </div>
+</section>
 
-            toggle.addEventListener('click', function() {
-                const current = root.getAttribute('data-theme');
-                if (current === 'dark') {
-                    root.setAttribute('data-theme', 'light');
-                    icon.textContent = '☀️';
-                    label.textContent = 'Светлая';
-                    icon.classList.add('rotate');
-                    localStorage.setItem('theme', 'light');
-                } else {
-                    root.setAttribute('data-theme', 'dark');
-                    icon.textContent = '🌙';
-                    label.textContent = 'Тёмная';
-                    icon.classList.remove('rotate');
-                    localStorage.setItem('theme', 'dark');
-                }
-            });
+<!-- CASES -->
+<section id="cases">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Кейсы</div>
+      <h2>Проекты и результаты</h2>
+      <p class="lead">Роль → задача → что сделал → результат в цифрах.</p>
+    </div>
 
-            toggle.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    toggle.click();
-                }
-            });
-        })();
-    </script>
+    <div class="grid cols-2">
+      <article class="case">
+        <div class="top"><h3>Медицинский центр</h3><span class="pill">интеграции · CRM · боты</span></div>
+        <div class="meta"><b>Роль:</b> внедренец · <b>Стек:</b> Битрикс24, МТС-телефония, MAX/Telegram-боты, Yandex Data Lens</div>
+        <p>Запись велась вручную, системы не были связаны, неявки не отслеживались, загрузка врачей — вне анализа.</p>
+        <p>Настроил CRM для пациентов и расписания, <b>интегрировал телефонию, ботов и CRM в единую систему</b>, внедрил напоминания и дашборды по загрузке.</p>
+        <div class="result"><b>−30%</b> <span>время записи</span><b>−25%</b> <span>неявки</span></div>
+      </article>
 
+      <article class="case">
+        <div class="top"><h3>Онлайн-школа</h3><span class="pill">интеграции · воронка · аналитика</span></div>
+        <div class="meta"><b>Роль:</b> внедренец · <b>Стек:</b> Битрикс24, Telegram/MAX-боты, REST API, Yandex Data Lens</div>
+        <p>Регистрация на вебинары терялась, системы не были связаны, конверсия не отслеживалась.</p>
+        <p>Внедрил CRM для студентов и групп, <b>интегрировал ботов, платежи и CRM</b>, настроил сквозную аналитику по конверсии.</p>
+        <div class="result"><b>+28%</b> <span>конверсия в регистрацию</span><b>+15%</b> <span>удержание</span></div>
+      </article>
+
+      <article class="case">
+        <div class="top"><h3>Мебельная компания</h3><span class="pill">интеграции · логистика · BI</span></div>
+        <div class="meta"><b>Роль:</b> внедренец · <b>Стек:</b> Битрикс24, Ростелеком-телефония, Telegram-бот, REST API, Bitrix BI</div>
+        <p>Заказы и склады вручную, учётная система не связана с CRM, просрочки поставок не отслеживались.</p>
+        <p>Внедрил CRM для заказов и складов, <b>интегрировал телефонию, бота и внешнюю учётную систему</b> через REST API, дашборды по срокам.</p>
+        <div class="result"><b>−25%</b> <span>время обработки</span><b>−30%</b> <span>просрочки поставок</span></div>
+      </article>
+
+      <article class="case">
+        <div class="top"><h3>Интернет-магазин</h3><span class="pill">интеграции · поддержка · продажи</span></div>
+        <div class="meta"><b>Роль:</b> интегратор · <b>Стек:</b> CRM, MAX/Telegram/WhatsApp, REST API, Bitrix BI</div>
+        <p>Поддержка перегружена типовыми вопросами, чаты не связаны с CRM, лиды терялись.</p>
+        <p><b>Объединил мессенджеры с CRM в единую систему</b>, боты для статуса заказа и возвратов, автопередача лидов, сквозная аналитика.</p>
+        <div class="result"><b>−35%</b> <span>нагрузка на поддержку</span><b>+18%</b> <span>повторные продажи</span></div>
+      </article>
+
+      <article class="case">
+        <div class="top"><h3>Агентство недвижимости</h3><span class="pill">Битрикс24 · интеграции · боты</span></div>
+        <div class="meta"><b>Роль:</b> внедренец · <b>Стек:</b> Битрикс24, REST API, MAX/Telegram-боты, Bitrix BI</div>
+        <p>Заявки терялись, первый ответ занимал часы, объекты не были связаны с CRM, аналитики по конверсии не было.</p>
+        <p>Внедрил Битрикс24 с нуля: воронки, этапы, телефония. <b>Интегрировал внешние источники объектов через REST API</b>, связал ботов и CRM, настроил отчётность в Bitrix BI и Power BI.</p>
+        <div class="result"><b>+22%</b> <span>закрытых сделок</span><b>−40%</b> <span>время первого ответа</span></div>
+      </article>
+
+      <article class="case">
+        <div class="top"><h3>Контакт-центр</h3><span class="pill">руководство · интеграции · миграция</span></div>
+        <div class="meta"><b>Роль:</b> руководитель техотдела, команда 3 чел. · <b>Масштаб:</b> 250+ операторов</div>
+        <p>Устаревшая платформа, системы не связаны, высокая нагрузка на поддержку, не было SLA и базы знаний.</p>
+        <p>Управлял командой, внедрил SLA/KPI/Help Desk, <b>интегрировал КЦ с CRM и телефонией</b>, мигрировал на облако, создал единую базу знаний.</p>
+        <div class="result"><b>−40%</b> <span>нагрузка на поддержку</span><b>↑ CSAT</b> <span>рост удовлетворённости</span></div>
+      </article>
+    </div>
+
+    <div class="tags" style="margin-top:32px">
+      <span class="tag">📞 Колл-центры</span>
+      <span class="tag">🏥 Медицина</span>
+      <span class="tag">🎓 Онлайн-школы</span>
+      <span class="tag">🪑 Мебель и логистика</span>
+      <span class="tag">🛒 E-commerce</span>
+      <span class="tag">🏠 Недвижимость</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section id="price">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Форматы и цены</div>
+      <h2>Цену называю я. Первый разбор — бесплатно</h2>
+      <p class="lead">Работаю как самозанятый, выдаю чек. Точная цена — после разбора задачи.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price">
+        <div class="kind">Почасовая</div>
+        <div class="amount">2 000–2 500 ₽<small>/час</small></div>
+        <ul>
+          <li>Точечные задачи</li>
+          <li>Консультации и разборы</li>
+          <li>Минимальный порог входа</li>
+        </ul>
+      </div>
+      <div class="price">
+        <div class="kind">Абонентская поддержка</div>
+        <div class="amount">от 40 000 ₽<small>/мес</small></div>
+        <ul>
+          <li>Сопровождение и доработки</li>
+          <li>Приоритетная реакция</li>
+          <li>Предсказуемо для обеих сторон</li>
+        </ul>
+      </div>
+      <div class="price">
+        <div class="kind">Проект под ключ</div>
+        <div class="amount">от 80 000 ₽</div>
+        <ul>
+          <li>Внедрение и интеграции</li>
+          <li>Фиксированный результат</li>
+          <li>Смета до старта</li>
+        </ul>
+      </div>
+    </div>
+    <p style="color:var(--muted);font-size:13px;margin-top:18px">
+      Малый объём поддержки — от 25 000 ₽/мес. Малый проект (одна интеграция) — от 40 000 ₽.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Контакты</div>
+      <h2>Опишите задачу — отвечу в течение дня</h2>
+      <p class="lead">Предложу формат и цену. Первый разбор — бесплатно.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <a href="mailto:i79934431322@yandex.ru">📩 Email</a>
+        <p>i79934431322@yandex.ru</p>
+      </div>
+      <div class="contact-card">
+        <a href="https://t.me/i_grinev">✈️ Telegram</a>
+        <p>@i_grinev</p>
+      </div>
+      <div class="contact-card">
+        <a href="tel:+79934431322">📱 Телефон / MAX</a>
+        <p>+7 993 443-13-22</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© <span id="y"></span> Иоанн Гринёв · Самозанятый</div>
+    <div>
+      <a href="mailto:i79934431322@yandex.ru">i79934431322@yandex.ru</a> ·
+      <a href="https://t.me/i_grinev">@i_grinev</a> ·
+      <a href="tel:+79934431322">+7 993 443-13-22</a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
